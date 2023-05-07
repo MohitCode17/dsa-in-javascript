@@ -1,6 +1,6 @@
 /* 🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟 BINARY SEARCH ALGORITHM 🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟 */
 
-// Binary search is an efficient searching algo that works on sorted collections. I divides the collection into two halves and compares the middle element with the desired element. If the middle element is smaller than the desired element, then the search is continued in the right half, otherwise, the search is continued in the left half.
+// Binary search is an efficient searching algorithm that works on sorted collections. We divided the collection into two halves and compares the middle element with the desired element. If the middle element is smaller than the desired element, then the search is continued in the right half, otherwise, the search is continued in the left half.
 
 
 // 👉 Implementation
