@@ -37,49 +37,98 @@ Stack is an abstact data type. It is defined by its behavior rather than being a
 */
 
 
-// Note : Assuming the stack can grow dynamically we are not considering the overflow condition. 
-
 class Stack{
-    constructor(){
-        this.items = [];
+    constructor(capacity){
+        this.capacity = capacity
+        this.stack = [];
+        this.top = -1;  // Indicate empty stack
     }
 
     push(element){
-        this.items.push(element);
+        // Condition to check overflow stack
+        if(this.isFull()){
+            console.log('Stack Overflow');
+            return;
+        }
+        this.top++;
+        this.stack[this.top] = element;
     }
 
     pop(){
-        return this.items.pop();
+        if(this.isEmpty()){
+            console.log('Stack Underflow');
+            return;
+        }
+        const poppedElement = this.stack[this.top];
+        this.stack.splice(this.top, 1);
+        this.top--;
+        return poppedElement;
     }
 
     peek(){
-        return this.items[this.items.length - 1];
+        if(this.isEmpty()){
+            console.log("Stack is Empty");
+            return;
+        }
+        return this.stack[this.top];
+    }
+
+    isFull(){
+        return this.top === this.capacity - 1;
     }
 
     isEmpty(){
-        return this.items.length === 0;
+        return this.top === -1;
     }
 
     size(){
-        return this.items.length;
+        return this.stack.length;
     }
 
     print(){
-        console.log(this.items.toString())
+        console.log(this.stack.toString())
     }
 }
 
-const stack = new Stack();
+// Create a new stack with capacity of 10
+const stack = new Stack(10);
+
+// Push some elements onto the stack
+stack.push(10);
+stack.push(20);
+stack.push(30);
+stack.push(40);
+stack.push(50);
+stack.push(60);
+stack.push(70);
+stack.push(80);
+stack.push(90);
+stack.push(100);
+
+// Try pushing an element when the stack is full (should log "Stack Overflow")
+// stack.push(110);
+
+// Peek element of the stack
+// console.log(stack.peek());
+
+// Pop some elements off the stack
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
+
+// Check if the stack is empty
 console.log(stack.isEmpty());
 
-stack.push(3);
-stack.push(4);
-stack.push(5);
-stack.push(6);
-stack.push(7);
+// Check if the stack is full
+console.log(stack.isFull());
 
-console.log(stack.size());
-console.log(stack.pop());
-console.log(stack.peek());
+// Check the size of stack
+console.log(stack.size())
 
+// Print stack elements
 stack.print();
+
+console.log(stack);
