@@ -73,7 +73,7 @@ class Queue{
     }
 }
 
-// Create a new stack with capacity of 10
+// Create a new Queue
 const queue = new Queue();
 
 console.log(queue);
