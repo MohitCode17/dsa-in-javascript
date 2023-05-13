@@ -17,7 +17,7 @@ Queue is an abstact data type. It is defined by its behavior rather than being a
 2. Dequeue, which removes an element from the front/head of the collection.
 
 
-👉 Stack Usage
+👉 Queue Usage
 
 ➡️ Printers
 ➡️ CPU task scheduling
