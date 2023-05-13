@@ -59,6 +59,13 @@ class Stack{
             console.log('Stack Underflow');
             return;
         }
+        // In this case time complexity will increase to o(n), but actually when we removed something from last, It has time complexity o(1).
+        // To reduced the TC from o(n) to o(1), you can use inbuilt pop() method.
+
+        // const poppedElement = this.stack.pop();
+        // this.top--;
+        // return poppedElement;
+
         const poppedElement = this.stack[this.top];
         this.stack.splice(this.top, 1);
         this.top--;
